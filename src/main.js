@@ -1,12 +1,18 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import store from './store'
+import Vue from 'vue';
+import App from './App.vue';
+import router from './router';
+import store from './store';
 
-Vue.config.productionTip = false
+import 'core-js/stable';
+import CoreuiVue from '@coreui/vue';
+import { iconsSet as icons } from './assets/icons/icons.js';
+
+Vue.config.productionTip = false;
+Vue.use(CoreuiVue);
 
 new Vue({
   router,
   store,
+  icons,
   render: h => h(App)
-}).$mount('#app')
+}).$mount('#app');
