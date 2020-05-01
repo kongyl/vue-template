@@ -1,15 +1,29 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
-const Page404 = () => import('@/views/pages/Page404');
-
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: '/',
-    name: 'Page404',
-    component: Page404
+    redirect: '/dashboard',
+    name: 'Home',
+    component: () => import('@/containers/TheContainer'),
+    children: [
+      {
+        path: 'dashboard',
+        name: 'Dashboard',
+        component: () => import('@/views/Dashboard')
+      }
+    ]
+  },
+  {
+    path: '/login',
+    component: () => import('@/views/pages/Login')
+  },
+  {
+    path: '/404',
+    component: () => import('@/views/pages/Page404')
   }
 ];
 
