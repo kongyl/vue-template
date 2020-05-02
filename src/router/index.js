@@ -24,6 +24,10 @@ const routes = [
   {
     path: '/404',
     component: () => import('@/views/pages/Page404')
+  },
+  {
+    path: '*',
+    redirect: '/404'
   }
 ];
 

@@ -7,6 +7,8 @@ import 'core-js/stable';
 import CoreuiVue from '@coreui/vue';
 import { iconsSet as icons } from './assets/icons/icons.js';
 
+import './permission';
+
 Vue.config.productionTip = false;
 Vue.use(CoreuiVue);
 
